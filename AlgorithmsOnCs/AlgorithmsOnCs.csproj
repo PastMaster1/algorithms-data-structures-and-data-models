@@ -6,6 +6,10 @@
     <RootNamespace>AlgorithmsOnC_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+	<PackageId>AlgorithmsAndDataStructuresLibrary</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>PastMaster1</Authors>
   </PropertyGroup>
 
 </Project>

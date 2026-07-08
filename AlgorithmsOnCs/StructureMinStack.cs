@@ -70,7 +70,7 @@ public class MinStack
     {
         if (IsEmpty())
         {
-            throw new InvalidOperationException("Stack is empty");
+            return 0;
         }
         return current!.count;
     }
@@ -82,13 +82,12 @@ public class MinStack
         }
         else
         {
-            Node cur = current!;
-            while (cur.previous != null)
+            Node? cur = current!;
+            while (cur != null)
             {
                 Console.WriteLine(cur.data);
                 cur = cur.previous;
             }
-            Console.WriteLine(cur.data);
         }
     }
 }

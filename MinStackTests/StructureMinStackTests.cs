@@ -53,11 +53,8 @@ public class StructureMinStackTests
     public void CalculateSizeOfEmptyStack()
     {
         MinStack stack = new MinStack();
-        var exception = Assert.Throws<InvalidOperationException>(() =>
-        {
-            stack.Count();
-        });
-        Assert.Equal("Stack is empty", exception.Message);
+        int d = stack.Count();
+        Assert.Equal(0, d);
     }
     
     [Fact]
