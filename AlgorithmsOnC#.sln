@@ -3,16 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinStackTests", "MinStackTests\MinStackTests.csproj", "{F8FA44A5-5E16-493F-A09A-2B3566074703}"
-	ProjectSection(ProjectDependencies) = postProject
-		{70A8540C-764F-440B-8F8F-22B04570715D} = {70A8540C-764F-440B-8F8F-22B04570715D}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnCs", "AlgorithmsOnCs\AlgorithmsOnCs.csproj", "{70A8540C-764F-440B-8F8F-22B04570715D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresProblemSolutions", "AlgorithmsAndDataStructuresProblemSolutions\AlgorithmsAndDataStructuresProblemSolutions.csproj", "{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresProblemSolutionsTests", "TestsForProblemSolutions\AlgorithmsAndDataStructuresProblemSolutionsTests.csproj", "{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinStackTests", "Tests\MinStackTests\MinStackTests.csproj", "{B411FE32-399C-46BD-933F-69266FD5A2D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataStructures", "src\MyDataSctructures\MyDataStructures.csproj", "{EB4586F8-035B-45B4-8E51-344CA1C83C7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,14 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8FA44A5-5E16-493F-A09A-2B3566074703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8FA44A5-5E16-493F-A09A-2B3566074703}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8FA44A5-5E16-493F-A09A-2B3566074703}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8FA44A5-5E16-493F-A09A-2B3566074703}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70A8540C-764F-440B-8F8F-22B04570715D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70A8540C-764F-440B-8F8F-22B04570715D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70A8540C-764F-440B-8F8F-22B04570715D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70A8540C-764F-440B-8F8F-22B04570715D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,6 +25,14 @@ Global
 		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B411FE32-399C-46BD-933F-69266FD5A2D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B411FE32-399C-46BD-933F-69266FD5A2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B411FE32-399C-46BD-933F-69266FD5A2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B411FE32-399C-46BD-933F-69266FD5A2D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4586F8-035B-45B4-8E51-344CA1C83C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4586F8-035B-45B4-8E51-344CA1C83C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4586F8-035B-45B4-8E51-344CA1C83C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4586F8-035B-45B4-8E51-344CA1C83C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

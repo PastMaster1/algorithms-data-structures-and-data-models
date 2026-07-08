@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using AlgorithmsOnCs;
+using DataStructuresOnCs;
 namespace MinStackTests;
 
 public class StructureMinStackTests

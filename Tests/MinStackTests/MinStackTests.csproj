@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AlgorithmsOnCs\AlgorithmsOnCs.csproj" />
+    <ProjectReference Include="..\..\src\MyDataSctructures\MyDataStructures.csproj" />
   </ItemGroup>
 
 </Project>

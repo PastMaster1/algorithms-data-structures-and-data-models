@@ -1,4 +1,4 @@
-﻿namespace AlgorithmsOnCs;
+﻿namespace DataStructuresOnCs;
 
 public class MinStack
 {
