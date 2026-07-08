@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinStackTests", "MinStackTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnCs", "AlgorithmsOnCs\AlgorithmsOnCs.csproj", "{70A8540C-764F-440B-8F8F-22B04570715D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresProblemSolutions", "AlgorithmsAndDataStructuresProblemSolutions\AlgorithmsAndDataStructuresProblemSolutions.csproj", "{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsAndDataStructuresProblemSolutionsTests", "TestsForProblemSolutions\AlgorithmsAndDataStructuresProblemSolutionsTests.csproj", "{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,14 @@ Global
 		{70A8540C-764F-440B-8F8F-22B04570715D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A8540C-764F-440B-8F8F-22B04570715D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A8540C-764F-440B-8F8F-22B04570715D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAE1C02-BC8E-451F-B00D-5CC54C4170CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A702894-ABF2-49DE-91B5-4A4FF8C1E50A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
