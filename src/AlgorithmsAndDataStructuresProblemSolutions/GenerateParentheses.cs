@@ -2,29 +2,6 @@
 
 public class GenerateParentheses
 {
-    static int Main()
-    {
-        int error_code = 0;
-        Console.Write("Введите количество пар скобок: ");
-        int n = Convert.ToInt32(Console.ReadLine());
-        if (n < 0)
-        {
-            Console.WriteLine("n/a");
-            error_code = 1;
-        }
-        else
-        {
-            List<string> res = new List<string>();
-            char[] combination_of_parentheses = new char[2*n];
-            GenerateFullListOfParentheses(n, res, combination_of_parentheses, 0, 0);
-            foreach (string a in res)
-            {
-                Console.WriteLine(a);
-            }
-        }
-        return error_code;
-    }
-
     public static void GenerateFullListOfParentheses(int n, List<string> list_of_parentheses, char[] current_string, int count_left, int count_right)
     {
         if (count_left < count_right)
