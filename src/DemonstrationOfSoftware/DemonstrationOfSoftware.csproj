@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AlgorithmsAndDataStructuresProblemSolutions\AlgorithmsAndDataStructuresProblemSolutions.csproj" />
-    <ProjectReference Include="..\..\MyDataSctructures\MyDataStructures.csproj" />
+    <ProjectReference Include="..\AlgorithmsAndDataStructuresProblemSolutions\AlgorithmsAndDataStructuresProblemSolutions.csproj" />
+    <ProjectReference Include="..\MyDataSctructures\MyDataStructures.csproj" />
   </ItemGroup>
 
 </Project>
