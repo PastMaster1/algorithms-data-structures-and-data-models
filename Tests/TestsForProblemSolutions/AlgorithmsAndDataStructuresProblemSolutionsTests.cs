@@ -341,4 +341,81 @@ public class AlgorithmsAndDataStructuresProblemSolutionsTests
         }
         Assert.True(f);
     }
+
+    [Fact]
+    [Trait("Category", "AnagramGrouping.cs")]
+    public void AnagramGroupingBasic()
+    {
+        string[] s = ["123", "132", "213", "45", "54", "6"];
+        List<List<string>> res = AnagramGrouping.GroupAnagrams(s);
+        bool f = true;
+        if (res.Count == 3 && res[0].Count == 3 && res[1].Count == 2 && res[2].Count == 1)
+        {
+            if (!(res[0][0] == "123" && res[0][1] == "132" && res[0][2] == "213" && res[1][0] == "45" && res[1][1] == "54" && res[2][0] == "6"))
+            {
+                f = false;
+            }
+        }
+        else
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
+
+    [Fact]
+    [Trait("Category", "AnagramGrouping.cs")]
+    public void AnagramGroupingOnlyOneString()
+    {
+        string[] s = ["a"];
+        List<List<string>> res = AnagramGrouping.GroupAnagrams(s);
+        bool f = true;
+        if (!(res.Count == 1 && res[0].Count == 1 && res[0][0] == "a"))
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
+
+    [Fact]
+    [Trait("Category", "AnagramGrouping.cs")]
+    public void AnagramGroupingEmptyArray()
+    {
+        string[] s = [];
+        List<List<string>> res = AnagramGrouping.GroupAnagrams(s);
+        bool f = true;
+        if (!(res.Count == 0))
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
+
+    [Fact]
+    [Trait("Category", "AnagramGrouping.cs")]
+    public void AnagramGroupingEmptyStrings()
+    {
+        string[] s = ["", ""];
+        List<List<string>> res = AnagramGrouping.GroupAnagrams(s);
+        bool f = true;
+        if (!(res.Count == 1 && res[0].Count == 2 && res[0][0] == "" && res[0][1] == ""))
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
+
+    [Fact]
+    [Trait("Category", "AnagramGrouping.cs")]
+    public void AnagramGroupingDuplicates()
+    {
+        string[] s = ["A", "A"];
+        List<List<string>> res = AnagramGrouping.GroupAnagrams(s);
+        bool f = true;
+        if (!(res.Count == 1 && res[0].Count == 2 && res[0][0] == "A" && res[0][1] == "A"))
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
 }

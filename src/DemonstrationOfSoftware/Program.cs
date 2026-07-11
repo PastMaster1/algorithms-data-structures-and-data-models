@@ -11,6 +11,7 @@ internal class Program
         list_of_software[3] = "GenerateParentheses.cs";
         list_of_software[4] = "EncodeAndDecode.cs";
         list_of_software[5] = "TopFrequentElements.cs";
+        list_of_software[6] = "AnagramGrouping.cs";
         
         Console.WriteLine("Демонстрация работы ПО");
         PrintHelp(list_of_software);
@@ -37,6 +38,10 @@ internal class Program
             else if (user_choice == 5)
             {
                 DemonstrationTopFrequentElements.TopFrequentElementsDemo();
+            }
+            else if (user_choice == 6)
+            {
+                DemonstrationAnagramGrouping.AnagramGroupingDemo();
             }
             else
             {
