@@ -1,0 +1,28 @@
+name: .NET CI/CD Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        cache: true
+
+    - name: Restore dependencies
+      run: dotnet restore "AlgorithmsOnC#.sln"
+
+    - name: Build project
+      run: dotnet build --no-restore --configuration Release "AlgorithmsOnC#.sln"
+
+    - name: Run tests
+      run: dotnet test --no-build --verbosity normal --configuration Release "AlgorithmsOnC#.sln"
