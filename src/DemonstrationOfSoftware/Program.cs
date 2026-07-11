@@ -10,6 +10,7 @@ internal class Program
         list_of_software[2] = "StructureMinStack.cs";
         list_of_software[3] = "GenerateParentheses.cs";
         list_of_software[4] = "EncodeAndDecode.cs";
+        list_of_software[5] = "TopFrequentElements.cs";
         
         Console.WriteLine("Демонстрация работы ПО");
         PrintHelp(list_of_software);
@@ -32,6 +33,10 @@ internal class Program
             else if (user_choice == 4)
             {
                 DemonstrationEncodeAndDecode.EncodeAndDecodeDemo();
+            }
+            else if (user_choice == 5)
+            {
+                DemonstrationTopFrequentElements.TopFrequentElementsDemo();
             }
             else
             {

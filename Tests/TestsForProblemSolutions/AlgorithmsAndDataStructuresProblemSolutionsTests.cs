@@ -285,4 +285,60 @@ public class AlgorithmsAndDataStructuresProblemSolutionsTests
         }
         Assert.True(f);
     }
+
+    [Fact]
+    [Trait("Category", "TopFrequentElements.cs")]
+    public void TopFrequentElementsBasic()
+    {
+        int n = 6;
+        int[] nums = [1, 1, 1, 2, 2, 3];
+        int k = 1;
+        int[] res = TopFrequentElements.FindTopFrequentElements(nums, n, k);
+        Assert.True(res.Length == 1 && res[0] == 1);
+    }
+
+    [Fact]
+    [Trait("Category", "TopFrequentElements.cs")]
+    public void TopFrequentElementsEmptyArray()
+    {
+        int n = 0;
+        int[] nums = [];
+        int k = 1;
+        int[] res = TopFrequentElements.FindTopFrequentElements(nums, n, k);
+        Assert.True(res.Length == 0);
+    }
+
+    [Fact]
+    [Trait("Category", "TopFrequentElements.cs")]
+    public void TopFrequentElementsEmptyResult()
+    {
+        int n = 6;
+        int[] nums = [1, 1, 1, 2, 2, 3];
+        int k = 0;
+        int[] res = TopFrequentElements.FindTopFrequentElements(nums, n, k);
+        Assert.True(res.Length == 0);
+    }
+
+    [Fact]
+    [Trait("Category", "TopFrequentElements.cs")]
+    public void TopFrequentElementskGreaterThann()
+    {
+        int n = 6;
+        int[] nums = [1, 1, 1, 2, 2, 3];
+        int k = 10;
+        int[] res = TopFrequentElements.FindTopFrequentElements(nums, n, k);
+        bool f = true;
+        if (res.Length == 3)
+        {
+            if (!(res[0] == 1 && res[1] == 2 && res[2] == 3))
+            {
+                f = false;
+            }
+        }
+        else
+        {
+            f = false;
+        }
+        Assert.True(f);
+    }
 }
