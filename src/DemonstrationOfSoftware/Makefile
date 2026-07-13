@@ -11,10 +11,13 @@ else
   FIX_PATH = $1
 endif
 
-.PHONY: build clean clean-package clean-publish publish pack
+.PHONY: build run clean clean-package clean-publish publish pack
 
 build:
 	$(COMPILER) build "$(PROJECT)" -c Release
+
+run: build
+	$(COMPILER) run --project "$(PROJECT)" -c Release --no-build
 
 clean:
 	$(COMPILER) clean "$(PROJECT)"
