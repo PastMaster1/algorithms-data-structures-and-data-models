@@ -8,11 +8,10 @@
 
 Проект разделен на несколько изолированных модулей (многопроектное решение .NET):
 
-*   **(./src/MyDataSctructures/)** — кастомные структуры данных.
-*   **(./src/AlgorithmsAndDataStructuresProblemSolutions/)** — библиотека алгоритмических решений.
-*   **(./src/DemonstrationOfSoftware/)** — интерактивное консольное CLI-приложение.
-*   **(./Tests/MinStackTests/)** — проект автоматического тестирования кастомной структуры данных MinStack.
-*   **(./Tests/TestsForProblemSolutions/)** — проект автоматического тестирования решений задач на алгоритмы и структуры данных.
+*   **(./src/MyDataStructures/)** — кастомные структуры данных.
+*   **(./src/AlgorithmsAndDataStructuresProblemSolutions/)** — решения алгоритмических задач.
+*   **(./src/DemonstrationOfSoftware/)** — интерактивные консольные CLI-приложения.
+*   **(./Tests/)** — проекты автоматического тестирования программ.
 
 ---
 
@@ -43,48 +42,51 @@
 ```text
 .
 |   .gitignore
-|   AlgorithmsOnC#.sln
+|   AlgorithmsAndDataStructures.sln
 |   README.md
 |
 +---.github
 |   \---workflows
-|       |   main.yml
+|           main.yml
 |
 +---src
 |   +---AlgorithmsAndDataStructuresProblemSolutions
-|   |   |   AlgorithmsAndDataStructuresProblemSolutions.csproj
-|   |   |   AnagramGrouping.cs
-|   |   |   EncodeAndDecode.cs
-|   |   |   GenerateParentheses.cs
-|   |   |   Makefile
-|   |   |   TopFrequentElements.cs
-|   |   |   README.md
+|   |   \---AlgorithmsAndDataStructuresProblemSolutionsOnCs
+|   |           AlgorithmsAndDataStructuresProblemSolutionsOnCs.csproj
+|   |           AnagramGrouping.cs
+|   |           EncodeAndDecode.cs
+|   |           GenerateParentheses.cs
+|   |           Makefile
+|   |           README.md
+|   |           TopFrequentElements.cs
 |   |
 |   +---DemonstrationOfSoftware
-|   |   |   DemonstrationAnagramGrouping.cs
-|   |   |   DemonstrationEncodeAndDecode.cs
-|   |   |   DemonstrationGenerateParentheses.cs
-|   |   |   DemonstrationOfSoftware.csproj
-|   |   |   DemonstrationStructureMinStack.cs
-|   |   |   DemonstrationTopFrequentElements.cs
-|   |   |   Makefile
-|   |   |   Program.cs
-|   |   |   README.md
+|   |   \---DemonstrationOfSoftwareOnCs
+|   |           DemonstrationAnagramGrouping.cs
+|   |           DemonstrationEncodeAndDecode.cs
+|   |           DemonstrationGenerateParentheses.cs
+|   |           DemonstrationOfSoftwareOnCs.csproj
+|   |           DemonstrationStructureMinStack.cs
+|   |           DemonstrationTopFrequentElements.cs
+|   |           Makefile
+|   |           Program.cs
+|   |           README.md
 |   |
-|   \---MyDataSctructures
-|       |   Makefile
-|       |   MyDataStructures.csproj
-|       |   StructureMinStack.cs
-|       |   README.md
+|   \---MyDataStructures
+|       \---MyDataStructuresOnCs
+|               Makefile
+|               MyDataStructuresOnCs.csproj
+|               README.md
+|               StructureMinStack.cs
 |
 \---Tests
-    +---MinStackTests
-    |   |   MinStackTests.csproj
-    |   |   StructureMinStackTests.cs
+    +---MyDataStructuresOnCsTests
+    |       MyDataStructuresOnCsTests.csproj
+    |       StructureMinStackTests.cs
     |
-    \---TestsForProblemSolutions
-        |   AlgorithmsAndDataStructuresProblemSolutionsTests.cs
-        |   AlgorithmsAndDataStructuresProblemSolutionsTests.csproj
+    \---TestsForProblemSolutionsOnCs
+            AlgorithmsAndDataStructuresProblemSolutionsOnCsTests.csproj
+            AlgorithmsAndDataStructuresProblemSolutionsTests.cs
 ```
 
 ---

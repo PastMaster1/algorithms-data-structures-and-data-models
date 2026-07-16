@@ -1,4 +1,4 @@
-# Algorithms And Data Structures Demo Of Software
+# Algorithms And Data Structures Demo Of Software On C#
 
 Данный проект содержит интерактивное консольное приложение для демонстрации работы программ.
 

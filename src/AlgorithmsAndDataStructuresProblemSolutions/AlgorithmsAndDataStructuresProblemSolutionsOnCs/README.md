@@ -1,4 +1,4 @@
-# Algorithms And Data Structures Problem Solutions
+# Algorithms And Data Structures Problem Solutions On C#
 
 Данный проект содержит академическую библиотеку задач на алгоритмы и структуры данных, их решения покрыты тестами.
 
