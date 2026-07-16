@@ -1,4 +1,4 @@
-name: .NET CI/CD Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -17,13 +17,13 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         cache: true
-        cache-dependency-path: "AlgorithmsOnC#.sln"
+        cache-dependency-path: "AlgorithmsAndDataStructures.sln"
 
     - name: Restore dependencies
-      run: dotnet restore "AlgorithmsOnC#.sln"
+      run: dotnet restore "AlgorithmsAndDataStructures.sln"
 
     - name: Build project
-      run: dotnet build --no-restore --configuration Release "AlgorithmsOnC#.sln"
+      run: dotnet build --no-restore --configuration Release "AlgorithmsAndDataStructures.sln"
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal --configuration Release "AlgorithmsOnC#.sln"
+      run: dotnet test --no-build --verbosity normal --configuration Release "AlgorithmsAndDataStructures.sln"

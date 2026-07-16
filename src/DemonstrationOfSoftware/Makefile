@@ -1,5 +1,5 @@
 COMPILER = dotnet
-PROJECT = $(CURDIR)/DemonstrationOfSoftware.csproj
+PROJECT = $(CURDIR)/DemonstrationOfSoftwareOnCs.csproj
 PUBLISHOUTDIR = $(CURDIR)/publish
 PACKAGEOUTDIR = $(CURDIR)/package
 

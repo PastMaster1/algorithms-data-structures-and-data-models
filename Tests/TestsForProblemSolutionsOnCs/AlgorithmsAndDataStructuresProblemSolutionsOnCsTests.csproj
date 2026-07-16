@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyDataSctructures\MyDataStructures.csproj" />
+    <ProjectReference Include="..\..\src\AlgorithmsAndDataStructuresProblemSolutions\AlgorithmsAndDataStructuresProblemSolutionsOnCs.csproj" />
   </ItemGroup>
 
 </Project>

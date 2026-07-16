@@ -1,6 +1,6 @@
 COMPILER = dotnet
-TESTS = $(CURDIR)/../../Tests/MinStackTests/MinStackTests.csproj
-PROJECT = $(CURDIR)/MyDataStructures.csproj
+TESTS = $(CURDIR)/../../Tests/MyDataStructuresOnCsTests/MyDataStructuresOnCsTests.csproj
+PROJECT = $(CURDIR)/MyDataStructuresOnCs.csproj
 PUBLISHOUTDIR = $(CURDIR)/publish
 PACKAGEOUTDIR = $(CURDIR)/package
 
@@ -24,8 +24,8 @@ test:
 clean:
 	$(COMPILER) clean "$(PROJECT)"
 	$(COMPILER) clean "$(TESTS)"
-	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/MinStackTests/bin))
-	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/MinStackTests/obj))
+	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/MyDataStructuresOnCsTests/bin))
+	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/MyDataStructuresOnCsTests/obj))
 	$(call RM,$(call FIX_PATH,$(CURDIR)/bin))
 	$(call RM,$(call FIX_PATH,$(CURDIR)/obj))
 
