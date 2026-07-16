@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyDataStructures\MyDataStructuresOnCs.csproj" />
+    <ProjectReference Include="..\..\src\MyDataStructures\MyDataStructuresOnCs\MyDataStructuresOnCs.csproj" />
   </ItemGroup>
 
 </Project>

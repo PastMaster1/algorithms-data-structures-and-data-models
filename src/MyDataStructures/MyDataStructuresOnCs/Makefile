@@ -1,18 +1,18 @@
 COMPILER = dotnet
-PROJECT = $(CURDIR)/AlgorithmsAndDataStructuresProblemSolutionsOnCs.csproj
-TESTS = $(CURDIR)/../../Tests/TestsForProblemSolutionsOnCs/AlgorithmsAndDataStructuresProblemSolutionsOnCsTests.csproj
+TESTS = $(CURDIR)/../../../tests/MyDataStructuresOnCsTests/MyDataStructuresOnCsTests.csproj
+PROJECT = $(CURDIR)/MyDataStructuresOnCs.csproj
 PUBLISHOUTDIR = $(CURDIR)/publish
 PACKAGEOUTDIR = $(CURDIR)/package
+
+.PHONY: build test clean publish pack clean-package clean-publish
 
 ifeq ($(OS),Windows_NT)
   RM = cmd /c if exist "$1" rmdir /s /q "$1"
   FIX_PATH = $(subst /,\,$1)
 else
-  RM = rm -r -f "$1"
+  RM = rm -rf "$1"
   FIX_PATH = $1
 endif
-
-.PHONY: build test clean clean-package clean-publish publish pack
 
 build:
 	$(COMPILER) build "$(PROJECT)" -c Release
@@ -24,8 +24,8 @@ test:
 clean:
 	$(COMPILER) clean "$(PROJECT)"
 	$(COMPILER) clean "$(TESTS)"
-	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/TestsForProblemSolutionsOnCs/bin))
-	$(call RM,$(call FIX_PATH,$(CURDIR)/../../Tests/TestsForProblemSolutionsOnCs/obj))
+	$(call RM,$(call FIX_PATH,$(CURDIR)/../../../tests/MyDataStructuresOnCsTests/bin))
+	$(call RM,$(call FIX_PATH,$(CURDIR)/../../../tests/MyDataStructuresOnCsTests/obj))
 	$(call RM,$(call FIX_PATH,$(CURDIR)/bin))
 	$(call RM,$(call FIX_PATH,$(CURDIR)/obj))
 
