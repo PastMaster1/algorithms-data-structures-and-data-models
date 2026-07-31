@@ -8,6 +8,7 @@ ifeq ($(OS), Windows_NT)
   EXT_DYNAMICLIB = .dll
   MKDIR = cmd /c if not exist "$1" mkdir "$1"
   EXT_TESTS = .exe
+  LDFLAGS =
 else
   CPPFLAGS = -std=c++17 -Wall -Werror -Wextra -Wpedantic -fPIC
   RMDIR = rm -r -f "$1"
@@ -16,6 +17,7 @@ else
   EXT_DYNAMICLIB = .so
   MKDIR = mkdir -p "$1"
   EXT_TESTS =
+  LDFLAGS = -Wl,-rpath,'.'
 endif
 
 TARGET_STATICLIB = $(CURDIR)/libDataStructures.a
@@ -43,7 +45,7 @@ $(OBJECTIVE_CODE_DIR):
 	$(call MKDIR,$(call FIX_PATH,$(OBJECTIVE_CODE_DIR)))
 
 test: $(TARGET_DYNAMICLIB)
-	$(CPPCOMPILER) $(TESTS_SOURCE_CODE) -I"$(TESTS_DIR)/include" -I"./include" -L"$(TESTS_DIR)" -L"." -lgtest -lDataStructures -o $(TESTS)
+	$(CPPCOMPILER) $(TESTS_SOURCE_CODE) -I"$(TESTS_DIR)/include" -I"./include" -L"." $(LDFLAGS) -lgtest -lDataStructures -o $(TESTS)
 
 clean-obj:
 	$(call RMDIR,$(call FIX_PATH,$(OBJECTIVE_CODE_DIR)))
