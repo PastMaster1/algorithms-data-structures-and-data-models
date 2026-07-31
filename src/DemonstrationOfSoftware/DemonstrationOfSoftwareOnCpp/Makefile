@@ -19,11 +19,12 @@ DEMO_HPPDIR = $(CURDIR)/include
 HPPDIR = $(CURDIR)/../../MyDataStructures/MyDataStructuresOnCpp/include
 SOURCELIB_DIR = $(CURDIR)/../../MyDataStructures/MyDataStructuresOnCpp/
 LIB = libDataStructures
+LIB_NAME = DataStructures
 
 all: $(TARGET)
 
 $(TARGET): $(LIB)$(EXT_DYNAMICLIB) $(SOURCE_CODE)
-	$(CPPCOMPILER) $(CPPFLAGS) $(SOURCE_CODE) -o $(TARGET) -I$(HPPDIR) -I$(DEMO_HPPDIR) -L$(CURDIR) -l$(LIB)
+	$(CPPCOMPILER) $(CPPFLAGS) $(SOURCE_CODE) -o $(TARGET) -I$(HPPDIR) -I$(DEMO_HPPDIR) -L$(CURDIR) -l$(LIB_NAME)
 
 $(LIB)$(EXT_DYNAMICLIB):
 	$(MAKE) -C $(SOURCELIB_DIR) $(LIB)$(EXT_DYNAMICLIB)
