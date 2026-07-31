@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI Pipeline
 
 on:
   push:
@@ -27,3 +27,17 @@ jobs:
 
     - name: Run tests
       run: dotnet test --no-build --verbosity normal --configuration Release "AlgorithmsAndDataStructures.sln"
+
+    - name: Install Google Test
+      run: sudo apt-get update && sudo apt-get install -y libgtest-dev
+
+    - name: Build C++ projects
+      run: |
+           make -C "src/MyDataStructures/MyDataStructuresOnCpp"
+           make -C "src/DemonstrationOfSoftware/DemonstrationOfSoftwareOnCpp"
+
+    - name: Test C++ projects
+      run: |
+           make -C "src/MyDataStructures/MyDataStructuresOnCpp" test
+           cd src/MyDataStructures/MyDataStructuresOnCpp/ 
+           ./run_tests
