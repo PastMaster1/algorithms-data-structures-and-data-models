@@ -18,7 +18,7 @@ SOURCE_CODE = $(CURDIR)/src/DemonstrationOfDataStructures.cpp $(CURDIR)/src/Demo
 DEMO_HPPDIR = $(CURDIR)/include
 HPPDIR = $(CURDIR)/../../MyDataStructures/MyDataStructuresOnCpp/include
 SOURCELIB_DIR = $(CURDIR)/../../MyDataStructures/MyDataStructuresOnCpp/
-LIB = DataStructures
+LIB = libDataStructures
 
 all: $(TARGET)
 

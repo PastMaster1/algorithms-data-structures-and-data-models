@@ -18,8 +18,8 @@ else
   EXT_TESTS =
 endif
 
-TARGET_STATICLIB = $(CURDIR)/DataStructures.a
-TARGET_DYNAMICLIB = DataStructures$(EXT_DYNAMICLIB)
+TARGET_STATICLIB = $(CURDIR)/libDataStructures.a
+TARGET_DYNAMICLIB = libDataStructures$(EXT_DYNAMICLIB)
 SOURCE_CODE_DIR = $(CURDIR)/source_code/
 OBJECTIVE_CODE_DIR = $(CURDIR)/objective_code
 SOURCE_CODE =  $(wildcard $(SOURCE_CODE_DIR)*.cpp)
