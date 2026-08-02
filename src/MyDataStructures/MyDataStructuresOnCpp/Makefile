@@ -27,7 +27,10 @@ OBJECTIVE_CODE_DIR = $(CURDIR)/objective_code
 SOURCE_CODE =  $(wildcard $(SOURCE_CODE_DIR)*.cpp)
 OBJECTIVE_CODE = $(patsubst $(SOURCE_CODE_DIR)%.cpp,$(OBJECTIVE_CODE_DIR)/%.o,$(SOURCE_CODE))
 TESTS_DIR = $(CURDIR)/../../../tests/MyDataStructuresOnCppTests
-TESTS_SOURCE_CODE = $(TESTS_DIR)/src/MyDataStructuresOnCppTests.cpp $(TESTS_DIR)/src/DataStructureLaptopOptionsTests.cpp $(TESTS_DIR)/src/DataStructureLaptopTests.cpp $(TESTS_DIR)/src/DataStructureOptionsForTV_Tests.cpp $(TESTS_DIR)/src/DataStructureTV_Tests.cpp $(TESTS_DIR)/src/UtilityFunctions.cpp
+TESTS_SOURCE_CODE_DIR = $(TESTS_DIR)/src/
+TESTS_OBJECTIVE_CODE_DIR = $(TESTS_DIR)/objective_code
+TESTS_SOURCE_CODE = $(wildcard $(TESTS_SOURCE_CODE_DIR)*.cpp)
+TESTS_OBJECTIVE_CODE = $(patsubst $(TESTS_SOURCE_CODE_DIR)%.cpp,$(TESTS_OBJECTIVE_CODE_DIR)/%.o,$(TESTS_SOURCE_CODE))
 TESTS = run_tests$(EXT_TESTS)
 
 all: $(TARGET_STATICLIB) $(TARGET_DYNAMICLIB)
@@ -41,14 +44,23 @@ $(TARGET_DYNAMICLIB): $(OBJECTIVE_CODE)
 $(OBJECTIVE_CODE_DIR)/%.o: $(SOURCE_CODE_DIR)%.cpp | $(OBJECTIVE_CODE_DIR)
 	$(CPPCOMPILER) $(CPPFLAGS) -c $< -o $@ -I"./include"
 
+$(TESTS_OBJECTIVE_CODE_DIR)/%.o: $(TESTS_SOURCE_CODE_DIR)%.cpp | $(TESTS_OBJECTIVE_CODE_DIR)
+	$(CPPCOMPILER) $(CPPFLAGS) -c $< -o $@ -I"$(TESTS_DIR)/include" -I"./include"
+
 $(OBJECTIVE_CODE_DIR):
 	$(call MKDIR,$(call FIX_PATH,$(OBJECTIVE_CODE_DIR)))
 
-test: $(TARGET_DYNAMICLIB)
-	$(CPPCOMPILER) $(TESTS_SOURCE_CODE) -I"$(TESTS_DIR)/include" -I"./include" -L"." $(LDFLAGS) -lgtest -lDataStructures -o $(TESTS)
+$(TESTS_OBJECTIVE_CODE_DIR):
+	$(call MKDIR,$(call FIX_PATH,$(TESTS_OBJECTIVE_CODE_DIR)))
+
+test: $(TARGET_DYNAMICLIB) $(TESTS_OBJECTIVE_CODE)
+	$(CPPCOMPILER) $(TESTS_OBJECTIVE_CODE) -I"$(TESTS_DIR)/include" -I"./include" -L"." $(LDFLAGS) -lgtest -lDataStructures -o $(TESTS)
 
 clean-obj:
 	$(call RMDIR,$(call FIX_PATH,$(OBJECTIVE_CODE_DIR)))
+
+clean-test-obj:
+	$(call RMDIR,$(call FIX_PATH,$(TESTS_OBJECTIVE_CODE_DIR)))
 
 clean-staticlib:
 	$(call RMFILE,$(call FIX_PATH,$(TARGET_STATICLIB)))
@@ -57,6 +69,6 @@ clean-dynamiclib:
 	$(call RMFILE,$(TARGET_DYNAMICLIB))
 	$(call RMFILE,$(TESTS))
 
-clean: clean-staticlib clean-dynamiclib clean-obj
+clean: clean-staticlib clean-dynamiclib clean-obj clean-test-obj
 
-.PHONY: all test clean-obj clean-staticlib clean-dynamiclib clean
+.PHONY: all test clean-obj clean-test-obj clean-staticlib clean-dynamiclib clean

@@ -15,7 +15,7 @@ TEST(TV, DefaultInitialization)
 
 TEST(TV, InitializationUsingOptionsForTV)
 {
-	OptionsForTV tv_options = OptionsForTV();
+	TV::Options tv_options;
 	tv_options.resolution = FullHD;
 	tv_options.diagonal = 15;
 	tv_options.smart_tv = true;

@@ -1,38 +1,24 @@
 ﻿#include <DataStructureTV.hpp>
 #include <iostream>
 
+float TV::GetScore() const
+{
+	float value = CountDisplayScore() + IsThereSmartTV() + IsThereHDR();
+	return value;
+}
+
 TV::TV()
 	: Display(), smart_tv(false), HDR(false) {}
 
-TV::TV(OptionsForTV options)
+TV::TV(const Options& options)
 	: Display(options.resolution, options.diagonal), smart_tv(options.smart_tv), HDR(options.HDR) {}
 
-const char* TV::GetResolution()
-{
-	return Display::GetResolution();
-}
-
-int TV::GetDiagonal()
-{
-	return Display::GetDiagonal();
-}
-
-bool TV::SetResolution(ResolutionTypes new_resolution)
-{
-	return Display::SetResolution(new_resolution);
-}
-
-bool TV::SetDiagonal(int new_diagonal)
-{
-	return Display::SetDiagonal(new_diagonal);
-}
-
-bool TV::IsThereSmartTV()
+bool TV::IsThereSmartTV() const
 {
 	return smart_tv;
 }
 
-bool TV::IsThereHDR()
+bool TV::IsThereHDR() const
 {
 	return HDR;
 }
@@ -47,7 +33,7 @@ void TV::SetHDR(bool new_value_of_HDR)
 	HDR = new_value_of_HDR;
 }
 
-void TV::PrintInfo()
+void TV::PrintInfo() const
 {
 	std::cout << "Характеристики телевизора" << std::endl;
 	std::cout << "Разрешение экрана: " << GetResolution() << std::endl;
@@ -56,33 +42,33 @@ void TV::PrintInfo()
 	std::cout << "Поддержка HDR: " << (IsThereHDR() ? "да" : "нет") << std::endl;
 }
 
-bool TV::operator==(TV& another_tv)
+bool TV::operator==(const TV& another_tv) const
 {
-	float value1 = Display::CountPPI() + IsThereSmartTV() + IsThereHDR();
-	float value2 = another_tv.Display::CountPPI() + another_tv.IsThereSmartTV() + another_tv.IsThereHDR();
+	float value1 = GetScore();
+	float value2 = another_tv.GetScore();
 	return (value1 == value2);
 }
 
-bool TV::operator>(TV& another_tv)
+bool TV::operator>(const TV& another_tv) const
 {
-	float value1 = Display::CountPPI() + IsThereSmartTV() + IsThereHDR();
-	float value2 = another_tv.Display::CountPPI() + another_tv.IsThereSmartTV() + another_tv.IsThereHDR();
+	float value1 = GetScore();
+	float value2 = another_tv.GetScore();
 	return (value1 > value2);
 }
 
-bool TV::operator<(TV& another_tv)
+bool TV::operator<(const TV& another_tv) const
 {
-	float value1 = Display::CountPPI() + IsThereSmartTV() + IsThereHDR();
-	float value2 = another_tv.Display::CountPPI() + another_tv.IsThereSmartTV() + another_tv.IsThereHDR();
+	float value1 = GetScore();
+	float value2 = another_tv.GetScore();
 	return (value1 < value2);
 }
 
-bool TV::operator>=(TV& another_tv)
+bool TV::operator>=(const TV& another_tv) const
 {
 	return(!(*this < another_tv));
 }
 
-bool TV::operator<=(TV& another_tv)
+bool TV::operator<=(const TV& another_tv) const
 {
 	return (!(*this > another_tv));
 }

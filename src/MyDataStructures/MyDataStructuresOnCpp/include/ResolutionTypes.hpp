@@ -1,5 +1,4 @@
-﻿#ifndef RESOLUTION_TYPES_HPP
-#define RESOLUTION_TYPES_HPP
+﻿#pragma once
 
 enum ResolutionTypes
 {
@@ -10,5 +9,3 @@ enum ResolutionTypes
 	UltraHD,
 	ResolutionTypesCount
 };
-
-#endif

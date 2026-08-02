@@ -1,6 +1,3 @@
-﻿#ifndef LAPTOP_DEMO_HPP
-#define LAPTOP_DEMO_HPP
+﻿#pragma once
 
 void LaptopDemo();
-
-#endif

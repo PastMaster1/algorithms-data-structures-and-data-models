@@ -1,5 +1,4 @@
-﻿#ifndef DISPLAY_HPP
-#define DISPLAY_HPP
+﻿#pragma once
 #include "ResolutionTypes.hpp"
 
 class Display
@@ -9,14 +8,12 @@ protected:
 	int diagonal;
 	Display();
 	Display(ResolutionTypes new_resolution, int new_diagonal);
-	const char* GetResolution();
-	int GetDiagonal();
-	bool SetResolution(ResolutionTypes new_resolution);
-	bool SetDiagonal(int new_diagonal);
-	float CountPPI();
+	float CountDisplayScore() const;
 public:
 	virtual ~Display() = default;
-	virtual void PrintInfo() = 0;
+	virtual void PrintInfo() const = 0;
+	const char* GetResolution() const;
+	int GetDiagonal() const;
+	bool SetResolution(ResolutionTypes new_resolution);
+	bool SetDiagonal(int new_diagonal);
 };
-
-#endif

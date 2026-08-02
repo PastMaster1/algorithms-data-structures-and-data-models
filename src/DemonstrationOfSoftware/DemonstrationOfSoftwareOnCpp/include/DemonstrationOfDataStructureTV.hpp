@@ -1,6 +1,3 @@
-﻿#ifndef TV_DEMO_HPP
-#define TV_DEMO_HPP
+﻿#pragma once
 
 void TVDemo();
-
-#endif

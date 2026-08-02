@@ -1,30 +1,30 @@
-﻿#ifndef TV_HPP
-#define TV_HPP
+﻿#pragma once
 #include "DataStructureDisplay.hpp"
-#include "DataStructureOptionsForTV.hpp"
 
-class TV : Display
+class TV : public Display
 {
 private:
 	bool smart_tv;
 	bool HDR;
+	float GetScore() const;
 public:
+	struct Options
+	{
+		ResolutionTypes resolution;
+		int diagonal;
+		bool smart_tv;
+		bool HDR;
+	};
 	TV();
-	TV(OptionsForTV options);
-	const char* GetResolution();
-	int GetDiagonal();
-	bool SetResolution(ResolutionTypes new_resolution);
-	bool SetDiagonal(int new_diagonal);
-	bool IsThereSmartTV();
-	bool IsThereHDR();
+	TV(const Options& options);
+	bool IsThereSmartTV() const;
+	bool IsThereHDR() const;
 	void SetSmartTV(bool new_value_of_smart_tv);
 	void SetHDR(bool new_value_of_HDR);
-	void PrintInfo() override;
-	bool operator==(TV& another_tv);
-	bool operator>(TV& another_tv);
-	bool operator<(TV& another_tv);
-	bool operator>=(TV& another_tv);
-	bool operator<=(TV& another_tv);
+	void PrintInfo() const override;
+	bool operator==(const TV& another_tv) const;
+	bool operator>(const TV& another_tv) const;
+	bool operator<(const TV& another_tv) const;
+	bool operator>=(const TV& another_tv) const;
+	bool operator<=(const TV& another_tv) const;
 };
-
-#endif

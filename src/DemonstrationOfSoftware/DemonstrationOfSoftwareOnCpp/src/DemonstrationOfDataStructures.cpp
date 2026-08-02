@@ -21,21 +21,12 @@ int main()
 	std::cin >> user_choice;
 	while (user_choice != 0)
 	{
-		if (user_choice == 1)
+		switch (user_choice)
 		{
-			PrintHelp();
-		}
-		else if (user_choice == 2)
-		{
-			LaptopDemo();
-		}
-		else if (user_choice == 3)
-		{
-			TVDemo();
-		}
-		else
-		{
-			std::cout << "Некорректный ввод!" << std::endl;
+			case 1: PrintHelp(); break;
+			case 2: LaptopDemo(); break;
+			case 3: TVDemo(); break;
+			default: std::cout << "Некорректный ввод!" << std::endl;
 		}
 		std::cout << std::endl;
 		std::cout << "Выберите какую программу запустить: ";

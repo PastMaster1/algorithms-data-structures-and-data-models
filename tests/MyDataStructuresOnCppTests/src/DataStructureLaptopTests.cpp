@@ -15,7 +15,7 @@ TEST(LAPTOP, DefaultInitialization)
 
 TEST(LAPTOP, InitializationUsingLaptopOptions)
 {
-	LaptopOptions laptop_options = LaptopOptions();
+	Laptop::Options laptop_options;
 	laptop_options.resolution = FullHD;
 	laptop_options.diagonal = 15;
 	laptop_options.battery_capacity = 5000;

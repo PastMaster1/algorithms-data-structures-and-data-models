@@ -1,40 +1,26 @@
 ﻿#include <DataStructureLaptop.hpp>
 #include <iostream>
 
+float Laptop::GetScore() const
+{
+	float value = CountDisplayScore() + GetBatteryLife();
+	return value;
+}
+
 Laptop::Laptop() : Display(), battery_capacity(0), battery_life(0) {}
 
-Laptop::Laptop(LaptopOptions options) : Display(options.resolution, options.diagonal)
+Laptop::Laptop(const Options& options) : Display(options.resolution, options.diagonal)
 {
 	battery_capacity = options.battery_capacity * (options.battery_capacity > 0);
 	battery_life = options.battery_life * (options.battery_life > 0);
 }
 
-const char* Laptop::GetResolution()
-{
-	return Display::GetResolution();
-}
-
-int Laptop::GetDiagonal()
-{
-	return Display::GetDiagonal();
-}
-
-bool Laptop::SetResolution(ResolutionTypes new_resolution)
-{
-	return Display::SetResolution(new_resolution);
-}
-
-bool Laptop::SetDiagonal(int new_diagonal)
-{
-	return Display::SetDiagonal(new_diagonal);
-}
-
-int Laptop::GetBatteryCapacity()
+int Laptop::GetBatteryCapacity() const
 {
 	return battery_capacity;
 }
 
-int Laptop::GetBatteryLife()
+int Laptop::GetBatteryLife() const
 {
 	return battery_life;
 }
@@ -59,7 +45,7 @@ bool Laptop::SetBatteryLife(int new_battery_life)
 	return true;
 }
 
-void Laptop::PrintInfo()
+void Laptop::PrintInfo() const
 {
 	std::cout << "Характеристики ноутбука" << std::endl;
 	std::cout << "Разрешение экрана: " << GetResolution() << std::endl;
@@ -68,33 +54,27 @@ void Laptop::PrintInfo()
 	std::cout << "Время работы без подзарядки: " << GetBatteryLife() << std::endl;
 }
 
-bool Laptop::operator==(Laptop& another_laptop)
+bool Laptop::operator==(const Laptop& another_laptop) const
 {
-	float value1 = Display::CountPPI() + GetBatteryLife();
-	float value2 = another_laptop.Display::CountPPI() + another_laptop.GetBatteryLife();
-	return (value1 == value2);
+	return (GetScore() == another_laptop.GetScore());
 }
 
-bool Laptop::operator>(Laptop& another_laptop)
+bool Laptop::operator>(const Laptop& another_laptop) const
 {
-	float value1 = Display::CountPPI() + GetBatteryLife();
-	float value2 = another_laptop.Display::CountPPI() + another_laptop.GetBatteryLife();
-	return (value1 > value2);
+	return (GetScore() > another_laptop.GetScore());
 }
 
-bool Laptop::operator<(Laptop& another_laptop)
+bool Laptop::operator<(const Laptop& another_laptop) const
 {
-	float value1 = Display::CountPPI() + GetBatteryLife();
-	float value2 = another_laptop.Display::CountPPI() + another_laptop.GetBatteryLife();
-	return (value1 < value2);
+	return (GetScore() < another_laptop.GetScore());
 }
 
-bool Laptop::operator>=(Laptop& another_laptop)
+bool Laptop::operator>=(const Laptop& another_laptop) const
 {
 	return(!(*this < another_laptop));
 }
 
-bool Laptop::operator<=(Laptop& another_laptop)
+bool Laptop::operator<=(const Laptop& another_laptop) const
 {
 	return (!(*this > another_laptop));
 }

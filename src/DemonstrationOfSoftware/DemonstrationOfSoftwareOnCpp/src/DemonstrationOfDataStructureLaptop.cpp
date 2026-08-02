@@ -8,8 +8,8 @@ void LaptopDemo()
 	std::cout << "Объявление первого ноутбука без параметров" << std::endl;
 	Laptop laptop1 = Laptop();
 	laptop1.PrintInfo();
-	std::cout << "Объявление второго ноутбука с помощью объекта класса LaptopOptions" << std::endl;
-	LaptopOptions laptop_options = LaptopOptions();
+	std::cout << "Объявление второго ноутбука с помощью структуры Options" << std::endl;
+	Laptop::Options laptop_options;
 	laptop_options.resolution = FullHD;
 	laptop_options.diagonal = 15;
 	laptop_options.battery_capacity = 5000;

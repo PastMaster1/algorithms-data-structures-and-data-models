@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cmath>
 #include <DataStructureDisplay.hpp>
 
 Display::Display(ResolutionTypes new_resolution, int new_diagonal)
@@ -16,7 +17,7 @@ Display::Display(ResolutionTypes new_resolution, int new_diagonal)
 
 Display::Display() : resolution(NO_INFO), diagonal(0) {}
 
-const char* Display::GetResolution()
+const char* Display::GetResolution() const
 {
 	const char* res;
 	switch (resolution)
@@ -30,7 +31,7 @@ const char* Display::GetResolution()
 	return res;
 }
 
-int Display::GetDiagonal()
+int Display::GetDiagonal() const
 {
 	return diagonal;
 }
@@ -55,12 +56,21 @@ bool Display::SetDiagonal(int new_diagonal)
 	return true;
 }
 
-float Display::CountPPI()
+float Display::CountDisplayScore() const
 {
 	float res = 0;
 	if (diagonal != 0)
 	{
-		res = float(resolution) / float(diagonal);
+		float width, height;
+		switch (resolution)
+		{
+			case HD: { width = 1280; height = 720; break; }
+			case FullHD: { width = 1920; height = 1080; break; }
+			case QuadHD: { width = 2560; height = 1440; break; }
+			case UltraHD: { width = 3840; height = 2160; break; }
+			default: { width = 0; height = 0; break; }
+		}
+		res = sqrt(pow(width, 2) + pow(height, 2)) / diagonal;
 	}
 	return res;
 }

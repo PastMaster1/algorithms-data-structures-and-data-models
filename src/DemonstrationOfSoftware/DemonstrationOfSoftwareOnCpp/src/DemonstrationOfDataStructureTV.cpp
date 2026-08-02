@@ -8,8 +8,8 @@ void TVDemo()
 	std::cout << "Объявление первого телевизора без параметров" << std::endl;
 	TV tv1 = TV();
 	tv1.PrintInfo();
-	std::cout << "Объявление второго телевизора с помощью объекта класса OptionsForTV" << std::endl;
-	OptionsForTV tv_options = OptionsForTV();
+	std::cout << "Объявление второго телевизора с помощью структуры Options" << std::endl;
+	TV::Options tv_options;
 	tv_options.resolution = FullHD;
 	tv_options.diagonal = 43;
 	tv_options.smart_tv = true;
