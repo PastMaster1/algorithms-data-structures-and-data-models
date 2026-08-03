@@ -1,23 +1,34 @@
-﻿# Algorithms And Data Structures
+﻿# Algorithms, Data Structures and Data Models
 
-Репозиторий содержит академическую библиотеку задач на алгоритмы и структуры данных, их решения покрыты тестами. В репозитории есть интерактивное консольное приложение для демонстрации работы программ.
+Репозиторий содержит академическую библиотеку задач на алгоритмы, структуры данных и модели данных,
+их решения покрыты тестами. В репозитории есть интерактивные консольные приложения для
+демонстрации работы программ.
 
 ---
 
-## Архитектура и структура решения
+## Технологический стек
 
-Проект разделен на несколько изолированных модулей (многопроектное решение .NET):
+*  **C#:** платформа `.NET 8.0 SDK`, библиотека для тестирования `xUnit`. 
+*  **C++:** компилятор `g++`, стандарт `C++17`, библиотека для тестирования `gtest`.
+*  Утилита `make`.
+
+---
+
+## Архитектура и структура репозитория
+
+Проект разделен на несколько изолированных модулей:
 
 *   **(./src/MyDataStructures/)** — кастомные структуры данных.
+*   **(./src/DataModels/)** — кастомные модели данных.
 *   **(./src/AlgorithmsAndDataStructuresProblemSolutions/)** — решения алгоритмических задач.
 *   **(./src/DemonstrationOfSoftware/)** — интерактивные консольные CLI-приложения.
-*   **(./Tests/)** — проекты автоматического тестирования программ.
+*   **(./tests/)** — проекты автоматического тестирования программ.
 
 ---
 
 ## Спецификация реализованных задач
 
-В проекте представлены решения следующих задач:
+### Решения задач на алгоритмы и структуры данных:
 
 1.  **StructureMinStack.cs:** Стек с поддержкой получения минимума за O(1).
 2.  **GenerateParentheses.cs:** Рекурсивный генератор правильных скобочных последовательностей.
@@ -25,19 +36,19 @@
 4.  **EncodeAndDecode.cs:** Кодирование и декодирование строк.
 5.  **TopFrequentElements.cs:** Поиск самых частых элементов массива.
 
----
-
-## Возможности
-
-*   **Структуры данных:** Кастомные реализации структур данных.
-*   **Алгоритмы:** Решения алгоритмических задач.
-*   **Интерактивное CLI-приложение:** Удобное меню в консоли для запуска и визуализации работы алгоритмов «на лету».
-*   **Тесты:** Покрытие с помощью xUnit.
-*   **Автоматизация:** Управление проектами через `Makefile`.
+### Объектные модели
+1.  **Display.hpp / .cpp:** Абстрактный класс `Display`.
+2.  **Laptop.hpp / .cpp и TV.hpp / .cpp:** Классы-наследники класса `Display`.
 
 ---
 
-## Структура проекта
+## Инструкции по запуску
+
+*   Инструкции по запуску находятся в локальных `README.md` в соответствующих директориях.
+
+---
+
+## Структура репозитория
 
 ```text
 .
@@ -60,7 +71,39 @@
 |   |           README.md
 |   |           TopFrequentElements.cs
 |   |
+|   +---DataModels
+|   |   \---Cpp
+|   |       |   Makefile
+|   |       |   README.md
+|   |       |
+|   |       +---include
+|   |       |       Display.hpp
+|   |       |       Laptop.hpp
+|   |       |       ResolutionTypes.hpp
+|   |       |       TV.hpp
+|   |       |
+|   |       \---source_code
+|   |               Display.cpp
+|   |               Laptop.cpp
+|   |               TV.cpp
+|   |
 |   +---DemonstrationOfSoftware
+|   |   +---Cpp
+|   |   |   |   Makefile
+|   |   |   |   README.md
+|   |   |   |
+|   |   |   +---include
+|   |   |   |   \---DataModels
+|   |   |   |           Laptop_Demo.hpp
+|   |   |   |           TV_Demo.hpp
+|   |   |   |
+|   |   |   \---src
+|   |   |       |   main.cpp
+|   |   |       |
+|   |   |       \---DataModels
+|   |   |               Laptop_Demo.cpp
+|   |   |               TV_Demo.cpp
+|   |   |
 |   |   \---DemonstrationOfSoftwareOnCs
 |   |           DemonstrationAnagramGrouping.cs
 |   |           DemonstrationEncodeAndDecode.cs
@@ -79,7 +122,18 @@
 |               README.md
 |               StructureMinStack.cs
 |
-\---Tests
+\---tests
+    +---DataModels
+    |   \---Cpp
+    |       +---include
+    |       |   |   UtilityFunctions.hpp
+    |       |
+    |       \---src
+    |               LaptopTests.cpp
+    |               main.cpp
+    |               TV_Tests.cpp
+    |               UtilityFunctions.cpp
+    |
     +---MyDataStructuresOnCsTests
     |       MyDataStructuresOnCsTests.csproj
     |       StructureMinStackTests.cs
@@ -88,14 +142,6 @@
             AlgorithmsAndDataStructuresProblemSolutionsOnCsTests.csproj
             AlgorithmsAndDataStructuresProblemSolutionsTests.cs
 ```
-
----
-
-## Системные требования
-
-Перед запуском убедитесь, что у вас установлены:
-1.  .NET 8.0 SDK или выше.
-2.  Утилита `make`.
 
 ---
 

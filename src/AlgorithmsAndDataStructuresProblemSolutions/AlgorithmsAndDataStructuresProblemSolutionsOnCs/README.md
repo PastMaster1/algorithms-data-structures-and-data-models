@@ -1,4 +1,5 @@
-# Algorithms And Data Structures Problem Solutions On C#
+# Algorithms, Data Structures and Data Models
+## Problem Solutions On C#
 
 Данный проект содержит академическую библиотеку задач на алгоритмы и структуры данных, их решения покрыты тестами.
 
@@ -54,10 +55,10 @@
 
 ## Инструкция по работе
 
-Сборка проекта: `make build`
-Запуск тестов: `make test`
-Собрать библиотеку со всеми зависимостями: `make publish`
-Собрать NuGet-пакет: `make pack`
+* Сборка проекта: `make build`
+* Запуск тестов: `make test`
+* Собрать библиотеку со всеми зависимостями: `make publish`
+* Собрать NuGet-пакет: `make pack`
 
 ---
 

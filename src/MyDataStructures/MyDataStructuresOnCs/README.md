@@ -1,4 +1,5 @@
-# Algorithms And Data Structures My Data Structures On C#
+# Algorithms, Data Structures and Data Models
+## My Data Structures On C#
 
 Данный проект содержит академическую библиотеку кастомных структур данных, их реализации покрыты тестами.
 
