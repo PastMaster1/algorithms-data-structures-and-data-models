@@ -1,5 +1,5 @@
-﻿#include <DataStructureTV.hpp>
-#include <DemonstrationOfDataStructureTV.hpp>
+﻿#include <TV.hpp>
+#include <TV_Demo.hpp>
 #include <iostream>
 
 void TVDemo()

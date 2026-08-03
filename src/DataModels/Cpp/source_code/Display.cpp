@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
-#include <DataStructureDisplay.hpp>
+#include <Display.hpp>
 
 Display::Display(ResolutionTypes new_resolution, int new_diagonal)
 {

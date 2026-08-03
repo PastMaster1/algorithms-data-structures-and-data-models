@@ -1,5 +1,5 @@
-﻿#include <DataStructureLaptop.hpp>
-#include <DemonstrationOfDataStructureLaptop.hpp>
+﻿#include <Laptop.hpp>
+#include <Laptop_Demo.hpp>
 #include <iostream>
 
 void LaptopDemo()

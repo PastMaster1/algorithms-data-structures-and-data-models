@@ -1,6 +1,6 @@
 ﻿#include <iostream>
-#include <DemonstrationOfDataStructureLaptop.hpp>
-#include <DemonstrationOfDataStructureTV.hpp>
+#include <Laptop_Demo.hpp>
+#include <TV_Demo.hpp>
 
 void PrintHelp()
 {

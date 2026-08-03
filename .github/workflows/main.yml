@@ -33,11 +33,11 @@ jobs:
 
     - name: Build C++ projects
       run: |
-           make -C "src/MyDataStructures/MyDataStructuresOnCpp"
-           make -C "src/DemonstrationOfSoftware/DemonstrationOfSoftwareOnCpp"
+           make -C "src/DataModels/Cpp"
+           make -C "src/DemonstrationOfSoftware/Cpp"
 
     - name: Test C++ projects
       run: |
-           make -C "src/MyDataStructures/MyDataStructuresOnCpp" test
-           cd src/MyDataStructures/MyDataStructuresOnCpp/ 
+           make -C "src/DataModels/Cpp" test
+           cd src/DataModels/Cpp/ 
            ./run_tests

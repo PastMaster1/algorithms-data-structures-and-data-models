@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "DataStructureDisplay.hpp"
+#include "Display.hpp"
 
 class Laptop : public Display
 {

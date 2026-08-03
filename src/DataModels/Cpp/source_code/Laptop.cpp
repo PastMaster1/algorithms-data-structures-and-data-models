@@ -1,4 +1,4 @@
-﻿#include <DataStructureLaptop.hpp>
+﻿#include <Laptop.hpp>
 #include <iostream>
 
 float Laptop::GetScore() const

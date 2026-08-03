@@ -1,4 +1,4 @@
-﻿#include <DataStructureTV.hpp>
+﻿#include <TV.hpp>
 #include <iostream>
 
 float TV::GetScore() const

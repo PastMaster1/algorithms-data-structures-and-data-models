@@ -1,5 +1,5 @@
 ﻿#include <gtest/gtest.h>
-#include <DataStructureLaptop.hpp>
+#include <Laptop.hpp>
 #include <UtilityFunctions.hpp>
 
 TEST(LAPTOP, DefaultInitialization)

@@ -1,5 +1,5 @@
 ﻿#include <gtest/gtest.h>
-#include <DataStructureTV.hpp>
+#include <TV.hpp>
 #include <UtilityFunctions.hpp>
 
 TEST(TV, DefaultInitialization)
