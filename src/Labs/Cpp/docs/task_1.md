@@ -4,67 +4,18 @@
 ```mermaid
 graph TD
 	START(["BEGIN"]) --> A
-	A[/"n"/] --> B["s = 0"]
-	B --> C{{"i := 5...3*n+2"}}
-	C --> D{{"j := 1...2*n*(n+1)"}}
-	D --> E["k = 50"]
-	E --> F{"k > 33"}
-	F --> G["k := k-3"]
-	G --> H["s = s + 1"]
-	H --> F
+	A[/"n"/] --"+1"--> B["s = 0"]
+	B --"+1"--> C{{"i := 5...3*n+2"}}
+	C --"[1]"--> D{{"j := 1...2*n*(n+1)"}}
+	D --"[2]"--> E["k = 50"]
+	E --"+1"--> F{"k > 33"}
+	F --"k = 50, 47, 44, 41, 38, 35		[3]"--> G["k := k-3"]
+	G --"+2"--> H["s = s + 1"]
+	H --"+2"--> F
 	F ---->|")"| D
 	D -->|")"| C
 	C -->|")"| I[/"s"/]
-	I --> END(["END"])
-	subgraph GroupA [" "]
-		direction LR
-		A
-		FormA["+1"]
-	end
-	subgraph GroupB [" "]
-		direction LR
-		B
-		FormB["+1"]
-	end
-	subgraph GroupC [" "]
-		direction LR
-		C
-		FormC["[1]"]
-	end
-	subgraph GroupD [" "]
-		direction LR
-		D
-		FormD["[2]"]
-	end
-	subgraph GroupE [" "]
-		direction LR
-		E
-		FormE["+1"]
-	end
-	subgraph GroupF [" "]
-		direction LR
-		F
-		FormF1["k = 50, 47, 44, 41, 38, 35"]
-		FormF2["[3]"]
-	end
-	subgraph GroupG [" "]
-		direction LR
-		G
-		FormG["+2"]
-	end
-	subgraph GroupH [" "]
-		direction LR
-		H
-		FormH["+2"]
-	end
-	subgraph GroupI [" "]
-		direction LR
-		I
-		FormI["+1"]
-	end
-	classDef transparent fill:none, stroke:none;
-	class GroupA,GroupB,GroupC,GroupD,GroupE,GroupF,GroupG,GroupH,GroupI transparent;
-	class FormA,FormB,FormC,FormD,FormE,FormF1,FormF2,FormG,FormH,FormI transparent;
+	I --"+1"--> END(["END"])
 ```
 
 [1]: $$+1+3+\sum_{i=5}^{3n+2}(1+3$$
