@@ -45,7 +45,7 @@ graph TD
 		direction LR
 		F
 		FormF1["k = 50, 47, 44, 41, 38, 35"]
-		FormF2["$$+1+\sum_{k`=1}^{6}(1$$"]
+		FormF2["$$+1+\sum_{k'=1}^{6}(1$$"]
 	end
 	subgraph GroupG [" "]
 		direction LR
