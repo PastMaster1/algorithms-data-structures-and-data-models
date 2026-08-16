@@ -29,12 +29,12 @@ graph TD
 	subgraph GroupC [" "]
 		direction LR
 		C
-		FormC["$$+1+3+\sum_{i=5}^{3n+2}(1+3$$"]
+		FormC["[1]"]
 	end
 	subgraph GroupD [" "]
 		direction LR
 		D
-		FormD["$$+1+4+\sum_{j=1}^{2n^2+2n}(1+4$$"]
+		FormD["[2]"]
 	end
 	subgraph GroupE [" "]
 		direction LR
@@ -45,7 +45,7 @@ graph TD
 		direction LR
 		F
 		FormF1["k = 50, 47, 44, 41, 38, 35"]
-		FormF2["$$+1+\sum_{k'=1}^{6}(1$$"]
+		FormF2["[3]"]
 	end
 	subgraph GroupG [" "]
 		direction LR
@@ -66,6 +66,12 @@ graph TD
 	class GroupA,GroupB,GroupC,GroupD,GroupE,GroupF,GroupG,GroupH,GroupI transparent;
 	class FormA,FormB,FormC,FormD,FormE,FormF1,FormF2,FormG,FormH,FormI transparent;
 ```
+
+[1]: $$+1+3+\sum_{i=5}^{3n+2}(1+3$$
+
+[2]: $$+1+4+\sum_{j=1}^{2n^2+2n}(1+4$$
+
+[3]: $$+1+\sum_{k'=1}^{6}(1$$
 
 ## Функция роста трудоемкости алгоритма
 
