@@ -1,87 +1,87 @@
-# Algorithms, Data Structures and Data Models
+п»ї# Algorithms, Data Structures and Data Models
 ## Data Models On C++
 
-Данная папка содержит академическую библиотеку кастомных моделей данных, их реализации покрыты тестами.
+Р”Р°РЅРЅР°СЏ РїР°РїРєР° СЃРѕРґРµСЂР¶РёС‚ Р°РєР°РґРµРјРёС‡РµСЃРєСѓСЋ Р±РёР±Р»РёРѕС‚РµРєСѓ РєР°СЃС‚РѕРјРЅС‹С… РјРѕРґРµР»РµР№ РґР°РЅРЅС‹С…, РёС… СЂРµР°Р»РёР·Р°С†РёРё РїРѕРєСЂС‹С‚С‹ С‚РµСЃС‚Р°РјРё.
 
 ---
 
-## Спецификация реализованных моделей данных
+## РЎРїРµС†РёС„РёРєР°С†РёСЏ СЂРµР°Р»РёР·РѕРІР°РЅРЅС‹С… РјРѕРґРµР»РµР№ РґР°РЅРЅС‹С…
 
-Здесь представлены реализации следующих объектных моделей:
-1.  **Display.hpp / .cpp:** Абстрактный класс `Display`.
-2.  **Laptop.hpp / .cpp и TV.hpp / .cpp:** Классы-наследники класса `Display`.
+Р—РґРµСЃСЊ РїСЂРµРґСЃС‚Р°РІР»РµРЅС‹ СЂРµР°Р»РёР·Р°С†РёРё СЃР»РµРґСѓСЋС‰РёС… РѕР±СЉРµРєС‚РЅС‹С… РјРѕРґРµР»РµР№:
+1.  **Display.hpp / .cpp:** РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ `Display`.
+2.  **Laptop.hpp / .cpp Рё TV.hpp / .cpp:** РљР»Р°СЃСЃС‹-РЅР°СЃР»РµРґРЅРёРєРё РєР»Р°СЃСЃР° `Display`.
 
 ---
 
-## Описание моделей данных
+## РћРїРёСЃР°РЅРёРµ РјРѕРґРµР»РµР№ РґР°РЅРЅС‹С…
 
 ### Display.hpp / .cpp:
 
-Абстрактный класс с полями `ResolutionTypes resolution` и `int diagonal`, у которых модификатор доступа `protected`.
-Методы:
-* `float CountDisplayScore() const`: Вычисляет рейтинг экрана.
-* `const char* GetResolution() const`: Возвращает разрешение экрана.
-* `int GetDiagonal() const`: Возвращает длину диагонали экрана.
-* `bool SetResolution(ResolutionTypes new_resolution)`: Изменяет значение разрешения экрана.
-* `bool SetDiagonal(int new_diagonal)`: Изменяет значение длины диагонали экрана.
-* `virtual void PrintInfo() const = 0`: Виртуальная функция для вывода характеристик.
+РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ СЃ РїРѕР»СЏРјРё `ResolutionTypes resolution` Рё `int diagonal`, Сѓ РєРѕС‚РѕСЂС‹С… РјРѕРґРёС„РёРєР°С‚РѕСЂ РґРѕСЃС‚СѓРїР° `protected`.
+РњРµС‚РѕРґС‹:
+* `float CountDisplayScore() const`: Р’С‹С‡РёСЃР»СЏРµС‚ СЂРµР№С‚РёРЅРі СЌРєСЂР°РЅР°.
+* `const char* GetResolution() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·СЂРµС€РµРЅРёРµ СЌРєСЂР°РЅР°.
+* `int GetDiagonal() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР»РёРЅСѓ РґРёР°РіРѕРЅР°Р»Рё СЌРєСЂР°РЅР°.
+* `bool SetResolution(ResolutionTypes new_resolution)`: РР·РјРµРЅСЏРµС‚ Р·РЅР°С‡РµРЅРёРµ СЂР°Р·СЂРµС€РµРЅРёСЏ СЌРєСЂР°РЅР°.
+* `bool SetDiagonal(int new_diagonal)`: РР·РјРµРЅСЏРµС‚ Р·РЅР°С‡РµРЅРёРµ РґР»РёРЅС‹ РґРёР°РіРѕРЅР°Р»Рё СЌРєСЂР°РЅР°.
+* `virtual void PrintInfo() const = 0`: Р’РёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє.
 
 ### Laptop.hpp / .cpp
 
-Класс-наследник класса `Display`.
-Поля:
+РљР»Р°СЃСЃ-РЅР°СЃР»РµРґРЅРёРє РєР»Р°СЃСЃР° `Display`.
+РџРѕР»СЏ:
 * `int battery_capacity`
 * `int battery_life`
-Методы:
-* `float GetScore() const`: Вычисляет рейтинг ноутбука.
-* `int GetBatteryCapacity() const`: Возвращает значение емкости аккумулятора.
-* `int GetBatteryLife() const`: Возвращает время работы без подзарядки.
-* `bool SetBatteryCapacity(int new_battery_capacity)`: Изменяет значение емкости аккумулятора.
-* `bool SetBatteryLife(int new_battery_life)`: Изменяет время работы без подзарядки.
-* `void PrintInfo() const override`: Выводит характеристики ноутбука.
-* `bool operator==(const Laptop& another_laptop) const`: Перегрузка оператора сравнения.
-* `bool operator>(const Laptop& another_laptop) const`: Перегрузка оператора сравнения.
-* `bool operator<(const Laptop& another_laptop) const`: Перегрузка оператора сравнения.
-* `bool operator>=(const Laptop& another_laptop) const`: Перегрузка оператора сравнения.
-* `bool operator<=(const Laptop& another_laptop) const`: Перегрузка оператора сравнения.
+РњРµС‚РѕРґС‹:
+* `float GetScore() const`: Р’С‹С‡РёСЃР»СЏРµС‚ СЂРµР№С‚РёРЅРі РЅРѕСѓС‚Р±СѓРєР°.
+* `int GetBatteryCapacity() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ РµРјРєРѕСЃС‚Рё Р°РєРєСѓРјСѓР»СЏС‚РѕСЂР°.
+* `int GetBatteryLife() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹ Р±РµР· РїРѕРґР·Р°СЂСЏРґРєРё.
+* `bool SetBatteryCapacity(int new_battery_capacity)`: РР·РјРµРЅСЏРµС‚ Р·РЅР°С‡РµРЅРёРµ РµРјРєРѕСЃС‚Рё Р°РєРєСѓРјСѓР»СЏС‚РѕСЂР°.
+* `bool SetBatteryLife(int new_battery_life)`: РР·РјРµРЅСЏРµС‚ РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹ Р±РµР· РїРѕРґР·Р°СЂСЏРґРєРё.
+* `void PrintInfo() const override`: Р’С‹РІРѕРґРёС‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РЅРѕСѓС‚Р±СѓРєР°.
+* `bool operator==(const Laptop& another_laptop) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator>(const Laptop& another_laptop) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator<(const Laptop& another_laptop) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator>=(const Laptop& another_laptop) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator<=(const Laptop& another_laptop) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
 
 ### TV.hpp / .cpp
 
-Класс-наследник класса `Display`.
-Поля:
+РљР»Р°СЃСЃ-РЅР°СЃР»РµРґРЅРёРє РєР»Р°СЃСЃР° `Display`.
+РџРѕР»СЏ:
 * `bool smart_tv`
 * `bool HDR`
-Методы:
+РњРµС‚РѕРґС‹:
 * `float GetScore() const`
-* `bool IsThereSmartTV() const`: Возвращает `true`, если есть поддержка Smart TV, иначе - `false`.
-* `bool IsThereHDR() const`: Возвращает `true`, если есть HDR, иначе - `false`.
-* `void SetSmartTV(bool new_value_of_smart_tv)`: Изменяет информацию о поддержке Smart TV.
-* `void SetHDR(bool new_value_of_HDR)`: Изменяет информацию о поддержке HDR.
-* `void PrintInfo() const override`: Выводит характеристики телевизора.
-* `bool operator==(const TV& another_tv) const`: Перегрузка оператора сравнения.
-* `bool operator>(const TV& another_tv) const`: Перегрузка оператора сравнения.
-* `bool operator<(const TV& another_tv) const`: Перегрузка оператора сравнения.
-* `bool operator>=(const TV& another_tv) const`: Перегрузка оператора сравнения.
-* `bool operator<=(const TV& another_tv) const`: Перегрузка оператора сравнения.
+* `bool IsThereSmartTV() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ `true`, РµСЃР»Рё РµСЃС‚СЊ РїРѕРґРґРµСЂР¶РєР° Smart TV, РёРЅР°С‡Рµ - `false`.
+* `bool IsThereHDR() const`: Р’РѕР·РІСЂР°С‰Р°РµС‚ `true`, РµСЃР»Рё РµСЃС‚СЊ HDR, РёРЅР°С‡Рµ - `false`.
+* `void SetSmartTV(bool new_value_of_smart_tv)`: РР·РјРµРЅСЏРµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕРґРґРµСЂР¶РєРµ Smart TV.
+* `void SetHDR(bool new_value_of_HDR)`: РР·РјРµРЅСЏРµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕРґРґРµСЂР¶РєРµ HDR.
+* `void PrintInfo() const override`: Р’С‹РІРѕРґРёС‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё С‚РµР»РµРІРёР·РѕСЂР°.
+* `bool operator==(const TV& another_tv) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator>(const TV& another_tv) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator<(const TV& another_tv) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator>=(const TV& another_tv) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
+* `bool operator<=(const TV& another_tv) const`: РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ.
 
 ---
 
-## Системные требования
+## РЎРёСЃС‚РµРјРЅС‹Рµ С‚СЂРµР±РѕРІР°РЅРёСЏ
 
-Перед запуском убедитесь, что у вас установлены:
-1.  Компилятор `g++`.
-2.  Утилита `make`.
-3.  Библиотека `gtest`.
-
----
-
-## Инструкция по работе
-
-* Сборка статической и динамической библиотек: `make`
-* Запуск тестов: `make test`
+РџРµСЂРµРґ Р·Р°РїСѓСЃРєРѕРј СѓР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ Сѓ РІР°СЃ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹:
+1.  РљРѕРјРїРёР»СЏС‚РѕСЂ `g++`.
+2.  РЈС‚РёР»РёС‚Р° `make`.
+3.  Р‘РёР±Р»РёРѕС‚РµРєР° `gtest`.
 
 ---
 
-## Автор
+## РРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕ СЂР°Р±РѕС‚Рµ
 
-*   **Автор:** PastMaster1
+* РЎР±РѕСЂРєР° СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ Рё РґРёРЅР°РјРёС‡РµСЃРєРѕР№ Р±РёР±Р»РёРѕС‚РµРє: `make`
+* Р—Р°РїСѓСЃРє С‚РµСЃС‚РѕРІ: `make test`
+
+---
+
+## РђРІС‚РѕСЂ
+
+*   **РђРІС‚РѕСЂ:** PastMaster1
